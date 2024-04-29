@@ -48,51 +48,7 @@ inquirer.prompt([
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-`# ${data.title}
 
-
-## Description
-${data.description}
-
-
-## Table of Contents (Optional)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing) 
-- [Tests](#tests)
-- [Questions](#questions)
-
-
-## Installation
-${data.installation}
-    
-
-## Usage
-${data.usage}   
-    
-
-## License
-${data.license}
-
-    ---
-    
-    🏆 
-
-## Contributing
-${data.contributing}
-    
-
-## Tests
-${data.tests}
-
-
-## Questions
-GitHub Profile: <a href = https://github.com/${username}>${username}</a>
-
-If you have additional questions, you can reach me at ${email}.`;
-
-    
     fs.writeFile('README.md', fileName, (err) => {
         err ? console.error(err) : console.log ("Successfully added the README file")
     })
