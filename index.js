@@ -37,11 +37,18 @@ inquirer.prompt([
     }
 ])
 .then((data) => {
-    
+
 })
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+
+
+    
+    fs.writeFile('README.md', fileName, (err) => {
+        err ? console.error(err) : console.log ("Successfully added the README file")
+    })
+}
 
 // TODO: Create a function to initialize app
 function init() {}
