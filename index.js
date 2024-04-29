@@ -34,6 +34,12 @@ inquirer.prompt([
         type: "input",
         name: "tests",
         message: "What are the test instructions for your application?"
+    },
+    {
+        type: "list",
+        name: "license",
+        message: "What type of license do you have?",
+        choices: ["Apache License 2.0", "ISC License", "MIT License", "GNU GPLv3"]
     }
 ])
 .then((data) => {
