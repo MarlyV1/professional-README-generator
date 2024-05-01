@@ -20,27 +20,16 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  let licenseLink = "";
-  if (license === 'Apache License 2.0'){
-    licenseLink = "http://www.apache.org/licenses/LICENSE-2.0";
-  }else if (license === 'ISC License') {
-    licenseLink = "https://opensource.org/license/isc-license-txt";
-
-  }else if (license === 'MIT License') {
-    licenseLink = "https://opensource.org/license/MIT";
-
-  }else if (license === 'GNU GPLv3') {
-    licenseLink = "https://www.gnu.org/licenses/gpl-3.0";
-
-  }else {
-    licenseLink = "";
+  if (license) {
+    return `\n- [License](#license)\n`
   }
-  return licenseLink;
-}
+} 
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  return `## License\n ${license}`
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -53,7 +42,6 @@ function generateMarkdown(data) {
   ## Table of Contents (Optional)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [License](#license)
   - [Contributing](#contributing) 
   - [Tests](#tests)
   - [Questions](#questions)
