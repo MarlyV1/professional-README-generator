@@ -45,7 +45,7 @@ inquirer.prompt([
     }
 ])
 .then((data) => {
-
+    return data;
 })
 
 // TODO: Create a function to write README file
@@ -55,7 +55,12 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer
+    const fileData = markdown.generateMarkdown(data);
+    writeToFile("README.md", fileData);
+
+}
 
 // Function call to initialize app
 init();
