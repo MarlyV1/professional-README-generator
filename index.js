@@ -5,6 +5,7 @@ const path = require('path');
 const markdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 
+// Questions that will be prompted to the user
 const questions = [
     {
         type: "input",
@@ -54,18 +55,23 @@ const questions = [
     }
 ];
 
+// Data fron the users input will be used to invoke the init function
 inquirer.prompt(questions)
 .then((data) => {
     init(data);
 })
 
 // TODO: Create a function to write README file
+
+// This we create the README file after taking in the input of a file and data
 function writeToFile(fileName, data) {
 
    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
 }
 
 // TODO: Create a function to initialize app
+
+// The generateMarkdown function gets invoked with the data of the user's input and the README is generated
 function init(data) {
     console.log(markdown.generateMarkdown(data))
     const file = markdown.generateMarkdown(data);

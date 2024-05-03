@@ -1,5 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+
+// A license badge is rendered based on the user's selection of a license
 function renderLicenseBadge(license) {
   let licenseBadge = "";
 
@@ -19,19 +21,27 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
+
+//If the user chooses a license then the license link is returned otherwise an empty string is returned
 function renderLicenseLink(license) {
   if (license) {
     return `- [License](#license)`
+  } else {
+    return ''
   }
 } 
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
+
+// After the user chooses a license then the license section is rendered
 function renderLicenseSection(license) {
   return `## License\n ${license}`
 }
 
 // TODO: Create a function to generate markdown for README
+
+// This function has the markdown for the README and it takes in the data from the user input
 function generateMarkdown(data) {
   const licenseBadge = renderLicenseBadge(data.license);
   const licenseLink = renderLicenseLink(data.license);
@@ -79,6 +89,7 @@ function generateMarkdown(data) {
 `;
 }
 
+// The generateMarkdown function can now be called in the index.js file
 module.exports = {
   generateMarkdown
 }
