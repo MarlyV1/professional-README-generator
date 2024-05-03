@@ -21,7 +21,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license) {
-    return `\n- [License](#license)\n`
+    return `- [License](#license)`
   }
 } 
 
@@ -37,17 +37,17 @@ function generateMarkdown(data) {
   const licenseLink = renderLicenseLink(data.license);
   const licenseSection = renderLicenseSection(data.license);
   return `# ${data.title}
-
+  
   ${licenseBadge}
   
   ## Description
   ${data.description}
   
   
-  ## Table of Contents (Optional)
+  ## Table of Contents 
   - [Installation](#installation)
   - [Usage](#usage)
-    ${licenseLink}
+  ${licenseLink}
   - [Contributing](#contributing) 
   - [Tests](#tests)
   - [Questions](#questions)
@@ -63,12 +63,6 @@ function generateMarkdown(data) {
   
   ${licenseSection}
 
-  ## License
-  ${data.license}
-  
-      ---
-      
-      🏆 
   
   ## Contributing
   ${data.contributing}
@@ -79,10 +73,12 @@ function generateMarkdown(data) {
   
   
   ## Questions
-  GitHub Profile: <a href = https://github.com/${username}>${username}</a>
+  GitHub Profile: <a href = https://github.com/${data.username}>${data.username}</a>
   
-  If you have additional questions, you can reach me at ${email}.
+  If you have additional questions, you can reach me at ${data.email}.
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = {
+  generateMarkdown
+}
