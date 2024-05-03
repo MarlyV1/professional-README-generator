@@ -30,7 +30,7 @@ const questions = [
     {
         type: "input",
         name: "contributing",
-        message: "What are the contribution guidlines for your application?"
+        message: "What are the contribution guidelines for your application?"
     },
     {
         type: "input",
@@ -73,7 +73,6 @@ function writeToFile(fileName, data) {
 
 // The generateMarkdown function gets invoked with the data of the user's input and the README is generated
 function init(data) {
-    console.log(markdown.generateMarkdown(data))
     const file = markdown.generateMarkdown(data);
     writeToFile("README.md", file);
 }
