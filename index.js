@@ -74,7 +74,7 @@ function writeToFile(fileName, data) {
 // The generateMarkdown function gets invoked with the data of the user's input and the README is generated
 function init(data) {
     const file = markdown.generateMarkdown(data);
-    writeToFile("README.md", file);
+    writeToFile("Sample-README.md", file);
 }
 
 
